@@ -4,7 +4,7 @@ document.getElementById("input-password").setAttribute("minlength", "6");
 
 
 function validateForm(evt) {
-	var nombre, apellido, email, contraseña;
+var nombre, apellido, email, contraseña;
 nombre = document.getElementById("name").value;
 apellido = document.getElementById("lastname").value;
 email = document.getElementById("input-email").value;
@@ -21,11 +21,13 @@ var lista = document.getElementById("lista").selectedIndex;
     // /1*234/; Buscaría: “234”,”1234″,”11234″,etc.
     // $	Final de una línea	
     // ^	Comienzo de una línea
-
+  
+    
+     
     if(nombre===""||apellido===""|| email===""|| contraseña==="") {
         alert("Todos los campos son obligatorios.");
         return false; 
-    }
+            }
     
     else if (!texto.test(nombre)){
         alert("No es un nombre válido");
@@ -58,8 +60,18 @@ var lista = document.getElementById("lista").selectedIndex;
     return false;
         evt.preventDefault();
 }
+    
+    else if (nombre.charAt(0) != nombre.charAt(0).toUpperCase()|| apellido.charAt(0) != apellido.charAt(0).toUpperCase()){
+        alert ("Primera letra en mayúsculas.");   
+               return false;
+        evt.preventDefault();
+  
+       
+    }
+    
   
 }
+
 
 
 
