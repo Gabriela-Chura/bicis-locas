@@ -3,8 +3,8 @@ document.getElementById("input-password").setAttribute("minlength", "6");
 
 
 
-function validateForm() {
-	var nombre, apellido, email, contraseña, expresion;
+function validateForm(evt) {
+	var nombre, apellido, email, contraseña;
 nombre = document.getElementById("name").value;
 apellido = document.getElementById("lastname").value;
 email = document.getElementById("input-email").value;
@@ -30,31 +30,37 @@ var lista = document.getElementById("lista").selectedIndex;
     else if (!texto.test(nombre)){
         alert("No es un nombre válido");
         return false;
+        evt.preventDefault();
         
     }
     
     else if (!texto.test(apellido)){
         alert("No es un apellido válido");
         return false;
-        
+        evt.preventDefault();
     }
     
     else if(contraseña === "password"|| contraseña==="123456"|| contraseña==="098754"){
-        alert("No es una contraseña válida.")
+        alert("No es una contraseña válida.");
         return false;
+        evt.preventDefault();
     }
     
     else if (!correo.test(email)) {
         alert("No es un correo válido");
         return false;
+        evt.preventDefault();
     }
     
     
     else if( lista == null || lista == 0 ) {
-        alert("Escoge una de la lista.")
+        alert("Escoge una de la lista.");
     return false;
+        evt.preventDefault();
 }
+  
 }
+
 
 
 

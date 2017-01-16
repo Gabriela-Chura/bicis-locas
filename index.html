@@ -16,14 +16,14 @@
   <body>
     <section class="form-container">
       <div class="container-fluid">
-        <form class="form-signup" onsubmit="return validateForm()">
+        <form class="form-signup" onsubmit="validateForm(evt)">
           <h2 id="form-signup-heading">
             Bicis Locas
           </h2>
           <div class="name-container input-box" >
             <label for="name" class="sr-only">Nombre</label>
             <input type="text" id="name" class="form-control"
-            placeholder="Ingrese su nombre" onkeypress='validate();' >
+            placeholder="Ingrese su nombre" onkeypress='validate(tipo);' >
           </div>
           <div class="lastname-container input-box">
             <label for="lastname" class="sr-only">Apellido</label>
